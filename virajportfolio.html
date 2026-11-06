@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Viraj Prasad Talekar, Front-end developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#06122B;--bg2:#0A1B3F;--card:#0E2350;--line:rgba(130,170,255,.16);--tx:#EAF1FF;--mut:#93A9D6;--blue:#2D6BFF;--sky:#6FB6FF;--ink:#fff;
+--d:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;--b:"Instrument Sans","Helvetica Neue",Arial,sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:dark}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#F2F6FF;--bg2:#E3ECFF;--card:#FFFFFF;--line:rgba(20,60,160,.15);--tx:#0A1B3F;--mut:#4B618F;--blue:#1F58EA;--sky:#1E7FD8;--ink:#fff;color-scheme:light}}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box;margin:0}
+html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{background:var(--bg);color:var(--tx);font:400 1.0625rem/1.65 var(--b);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:60}
+a{color:inherit;text-decoration:none}h1,h2,h3{font-family:var(--d);line-height:1;letter-spacing:-.035em;font-weight:700}
+:focus-visible{outline:2px solid var(--sky);outline-offset:3px}
+.w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.14em;margin-bottom:-.14em}.i{display:inline-block}
+[data-scrub] .w{overflow:visible}[data-scrub] .i{opacity:.16}
+.wrap{width:min(1240px,100% - 2.4rem);margin-inline:auto}
+nav{position:fixed;top:0;inset-inline:0;z-index:50;padding:calc(env(safe-area-inset-top,0px) + 1rem) 1.2rem 1rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;backdrop-filter:blur(14px);background:linear-gradient(var(--bg),transparent)}
+.logo{font:800 1.3rem var(--d);letter-spacing:-.04em}.logo b{color:var(--sky)}
+nav ul{list-style:none;display:flex;gap:clamp(.8rem,2.4vw,2rem);padding:0;align-items:center;font-size:.95rem}
+nav a.on{color:var(--sky)}nav li a:hover{color:var(--sky)}
+.btn{display:inline-flex;align-items:center;gap:.6rem;background:var(--blue);color:var(--ink);padding:.85rem 1.5rem;border-radius:99px;font:600 1rem var(--b);border:0;cursor:pointer;transition:background .25s}
+.btn:hover{background:var(--sky);color:#06122B}.btn.o{background:transparent;border:1px solid var(--line);color:var(--tx)}.btn.o:hover{border-color:var(--sky);color:var(--sky);background:transparent}
+.view[hidden]{display:none}
+section{padding:clamp(4.5rem,11vw,9rem) 0;position:relative}
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding-top:8rem;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:72px 72px;-webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 40%,#000,transparent);mask-image:radial-gradient(ellipse 70% 60% at 50% 40%,#000,transparent)}
+.orb{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none}
+.o1{width:46vw;height:46vw;background:var(--blue);opacity:.38;top:-12vw;right:-10vw}.o2{width:30vw;height:30vw;background:var(--sky);opacity:.18;bottom:-8vw;left:-6vw}
+.hero h1{font-size:clamp(2.9rem,8.6vw,8.2rem);max-width:13ch;position:relative}
+.hero h1 span.l2{color:var(--sky)}
+.hero .sub{max-width:52ch;color:var(--mut);margin:2rem 0 2.4rem;font-size:1.2rem}
+.hero .row{display:flex;gap:.8rem;flex-wrap:wrap;position:relative}
+.term{position:absolute;right:max(1.2rem,calc((100vw - 1240px)/2));bottom:3.5rem;width:min(400px,86vw);background:rgba(6,18,43,.78);border:1px solid var(--line);border-radius:10px;backdrop-filter:blur(12px);font:.8rem/1.9 ui-monospace,Menlo,Consolas,monospace;padding:1rem 1.2rem;color:#CFE0FF}
+.term div{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.term .ok{color:#6FE3A8}.term .dim{color:#7F95C2}.term .hd{display:flex;gap:6px;margin-bottom:.6rem}.term .hd i{width:9px;height:9px;border-radius:50%;background:#2D4A8C}
+@media(max-width:1000px){.term{position:relative;right:auto;bottom:auto;margin:3rem 1.2rem 0}.hero{align-items:flex-start}}
+@media(max-width:600px){nav li:first-child{display:none}nav ul{gap:.9rem}}nav a.btn.on{color:var(--ink)}
+.mq{border-block:1px solid var(--line);overflow:hidden;padding:1.4rem 0;background:var(--bg2)}
+.mq div{display:flex;width:max-content;gap:3rem;font:700 clamp(1.4rem,3vw,2.2rem) var(--d);letter-spacing:-.03em;color:var(--mut)}.mq span:nth-child(even){color:var(--sky)}
+h2{font-size:clamp(2.2rem,5.6vw,4.8rem)}
+.lead{color:var(--mut);max-width:56ch;margin-top:1.4rem;font-size:1.15rem}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap;margin-bottom:3.5rem}
+.stk{position:sticky;top:6.5rem;margin-bottom:4rem;display:grid;grid-template-columns:1fr 1.25fr;background:var(--card);border:1px solid var(--line);border-radius:26px;overflow:hidden;min-height:440px;transform-origin:50% 0}
+.stk .tx{padding:clamp(1.6rem,4vw,3.2rem);display:flex;flex-direction:column;justify-content:space-between;gap:2rem}
+.stk h3{font-size:clamp(1.9rem,3.6vw,3rem)}.stk p{color:var(--mut);margin-top:1rem}
+.tags{display:flex;gap:.5rem;flex-wrap:wrap}.tags span{border:1px solid var(--line);border-radius:6px;padding:.25rem .7rem;font-size:.85rem;color:var(--sky)}
+.mk{margin:1.2rem;border-radius:14px;overflow:hidden;background:linear-gradient(140deg,var(--g1),var(--g2));position:relative;min-height:280px}
+.mk::before{content:"";position:absolute;left:1.2rem;top:1.2rem;width:44px;height:10px;background:radial-gradient(circle,rgba(255,255,255,.55) 4px,transparent 5px) 0 0/15px 10px}
+.mk .fr{position:absolute;inset:3rem 1.4rem 0;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);border-radius:10px 10px 0 0;padding:1.2rem;display:grid;gap:.7rem;align-content:start}
+.mk .fr i{display:block;height:14px;border-radius:4px;background:rgba(255,255,255,.28)}.mk .fr i:nth-child(1){width:55%;height:30px;background:rgba(255,255,255,.7)}.mk .fr i:nth-child(2){width:80%}.mk .fr i:nth-child(3){width:40%}.mk .fr i:nth-child(4){width:100%;height:90px;background:rgba(255,255,255,.14);border-radius:8px;margin-top:.6rem}
+@media(max-width:800px){.stk{grid-template-columns:1fr;position:relative;top:0}.mk{min-height:220px;order:-1}}
+.hs{overflow:hidden;background:var(--bg2);border-block:1px solid var(--line);padding:0}
+.hs .in{min-height:100svh;display:flex;flex-direction:column;justify-content:center;gap:3rem;padding:6rem 0}
+.tr{display:flex;gap:1.6rem;padding-inline:max(1.2rem,calc((100vw - 1240px)/2));width:max-content}
+.tr article{width:min(420px,80vw);min-height:320px;padding:2rem;border:1px solid var(--line);border-radius:4px 28px 4px 28px;background:var(--bg);display:flex;flex-direction:column;justify-content:space-between}
+.tr em{font:800 4.2rem var(--d);font-style:normal;color:var(--blue);letter-spacing:-.05em;line-height:1}.tr h3{font-size:1.8rem;margin:1rem 0 .6rem}.tr p{color:var(--mut)}
+@media(prefers-reduced-motion:reduce){.tr{overflow-x:auto;width:auto}}
+.rows a{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:1rem;align-items:center;padding:2rem 0;border-top:1px solid var(--line);transition:padding .35s,color .3s,background .3s}
+.rows a:last-child{border-bottom:1px solid var(--line)}.rows a:hover{padding-inline:1.2rem;color:var(--sky);background:var(--bg2)}
+.rows h3{font-size:clamp(1.6rem,3.6vw,3rem)}.rows span{color:var(--mut)}
+@media(max-width:700px){.rows a{grid-template-columns:1fr}}
+.svc{display:grid;grid-template-columns:.8fr 1.2fr;gap:2rem;padding:2.6rem 0;border-top:1px solid var(--line)}
+.svc h3{font-size:clamp(1.7rem,3vw,2.5rem)}.svc ul{list-style:none;padding:0;display:grid;gap:.5rem;margin-top:1.2rem}.svc li{padding-left:1.3rem;position:relative;color:var(--mut)}.svc li::before{content:"";position:absolute;left:0;top:.7em;width:8px;height:2px;background:var(--blue)}
+@media(max-width:800px){.svc{grid-template-columns:1fr}}
+.big{font:700 clamp(1.8rem,4.6vw,3.8rem)/1.14 var(--d);letter-spacing:-.03em;max-width:24ch}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,6rem);align-items:start}
+@media(max-width:800px){.two{grid-template-columns:1fr}}
+.panel{background:var(--bg2);border:1px solid var(--line);border-radius:20px 4px 20px 4px;padding:2rem}.panel h3{font-size:1.5rem;margin-bottom:1rem}
+.sk{display:flex;flex-wrap:wrap;gap:.55rem}.sk span{background:var(--card);border:1px solid var(--line);border-radius:99px;padding:.4rem 1rem;font-size:.95rem}
+.ph{height:clamp(320px,48vw,560px);overflow:hidden;border-radius:6px 34px 6px 34px;position:relative;background:linear-gradient(160deg,var(--blue),#0A1B3F 70%)}
+.ph div{position:absolute;inset:-12% 0;display:grid;place-items:center;font:800 clamp(8rem,22vw,20rem) var(--d);letter-spacing:-.08em;color:rgba(255,255,255,.14)}
+form{display:grid;gap:1.4rem}label{display:grid;gap:.45rem;font-weight:500}
+input,textarea,select{font:inherit;color:var(--tx);background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:.9rem 1rem;width:100%}
+input:focus,textarea:focus,select:focus{outline:2px solid var(--sky);border-color:transparent}
+.cta{background:var(--blue);color:var(--ink);border-radius:36px;padding:clamp(3rem,8vw,7rem) clamp(1.6rem,5vw,5rem);position:relative;overflow:hidden}
+.cta h2{font-size:clamp(2.6rem,8vw,7.4rem);max-width:12ch}.cta a.btn{background:var(--ink);color:var(--blue);margin-top:2.2rem}.cta a.btn:hover{background:#06122B;color:#fff}
+.cta::after{content:"";position:absolute;width:40vw;height:40vw;border-radius:50%;right:-10vw;bottom:-18vw;border:1px solid rgba(255,255,255,.35);box-shadow:0 0 0 5vw rgba(255,255,255,.06),0 0 0 10vw rgba(255,255,255,.04)}
+footer{padding:3rem 0 2.4rem;display:flex;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;color:var(--mut);font-size:.95rem}footer nav{all:unset}footer a:hover{color:var(--sky)}
+.pre{position:fixed;inset:0;background:var(--bg);z-index:100;display:grid;place-items:center;font:800 clamp(4rem,14vw,10rem) var(--d);letter-spacing:-.06em}
+.pre small{display:block;font:500 1rem var(--b);letter-spacing:0;color:var(--mut);text-align:center}
+.c{display:inline-block}
+.tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin:2rem 0 1rem}.tb{font:600 .95rem var(--b);color:var(--tx);background:transparent;border:1px solid var(--line);border-radius:99px;padding:.55rem 1.1rem;cursor:pointer;transition:background .25s,border-color .25s}
+.tb.on{background:var(--blue);border-color:var(--blue);color:var(--ink)}.tp{min-height:6.5em;font-size:1.2rem;color:var(--mut);max-width:50ch}
+.svc{cursor:pointer;position:relative}.svc h3{padding-right:3rem;transition:color .25s}.svc:hover h3{color:var(--sky)}.svc::after{content:"+";position:absolute;right:0;top:2.2rem;font:300 2.4rem/1 var(--d);color:var(--sky);transition:transform .4s}.svc.open::after{transform:rotate(45deg)}
+.sc{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s ease}.svc.open .sc{grid-template-rows:1fr}.sc>div{overflow:hidden;min-height:0}
+.bm{display:block;font:700 clamp(1.25rem,3.2vw,2.1rem) var(--d);letter-spacing:-.03em;color:var(--sky);margin-top:2rem;word-break:break-all}.bm:hover{text-decoration:underline}
+body[data-v=contact] .cta{display:none}
+.hp{height:3px;background:var(--line);border-radius:3px;overflow:hidden}.hp i{display:block;height:100%;background:var(--sky);transform:scaleX(0);transform-origin:0 50%}
+.pc{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:3rem}.pc article{background:var(--bg2);border:1px solid var(--line);padding:2rem;min-height:230px;border-radius:4px 28px 4px 28px;transition:transform .35s,border-color .35s}.pc article:hover{transform:translateY(-8px);border-color:var(--sky)}.pc h3{font-size:2.2rem;margin-bottom:1rem}.pc p{color:var(--mut)}
+@media(max-width:800px){.pc{grid-template-columns:1fr}}
+.mq2{overflow:hidden;padding:2rem 0;border-block:1px solid var(--line)}.mq2 div{display:flex;width:max-content;gap:3rem;font:800 clamp(4rem,12vw,10rem)/1 var(--d);letter-spacing:-.05em;-webkit-text-stroke:1px var(--sky);color:transparent}
+.rgw{display:flex;align-items:center;gap:1.5rem;margin-bottom:1.5rem}.ring{position:relative;width:120px;flex:none}.ring svg{width:100%;display:block}.ring b{position:absolute;inset:0;display:grid;place-items:center;font:700 1.5rem var(--d)}
+.rb{fill:none;stroke:var(--line);stroke-width:8}.rf{fill:none;stroke:var(--sky);stroke-width:8;stroke-linecap:round;stroke-dasharray:327;stroke-dashoffset:327;transform:rotate(-90deg);transform-origin:60px 60px;transition:stroke-dashoffset .6s}
+.cl{list-style:none;padding:0;display:grid;gap:.6rem}.cl button{width:100%;text-align:left;font:600 1.05rem var(--b);color:var(--tx);background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:1rem 1.2rem 1rem 3.2rem;cursor:pointer;position:relative;transition:border-color .25s,background .25s}
+.cl button::before{content:"";position:absolute;left:1.1rem;top:50%;width:1.3rem;height:1.3rem;margin-top:-.65rem;border-radius:50%;border:2px solid var(--line)}
+.cl button[aria-pressed=true]{border-color:var(--sky)}.cl button[aria-pressed=true]::before{background:var(--sky);border-color:var(--sky)}.cl button[aria-pressed=true]::after{content:"✓";position:absolute;left:1.42rem;top:50%;transform:translateY(-50%);font-size:.8rem;color:#06122B}
+@keyframes pop{0%{transform:scale(.4)}60%{transform:scale(1.25)}100%{transform:scale(1)}}.cl button[aria-pressed=true]::before{animation:pop .4s ease-out}
+
+.demo{margin-top:3rem;border:1px solid var(--line);border-radius:28px 4px 28px 4px;background:var(--bg2);padding:clamp(1.2rem,3vw,2.4rem)}
+.dtop{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;justify-content:space-between;margin-bottom:2rem}.sw-w{display:flex;align-items:center;gap:1rem;font:700 1.1rem var(--d)}
+#sw{width:64px;height:34px;border-radius:99px;border:0;background:#B93A4A;position:relative;cursor:pointer;transition:background .3s;flex:none}#sw::after{content:"";position:absolute;top:4px;left:4px;width:26px;height:26px;border-radius:50%;background:#fff;transition:transform .3s}#sw[aria-checked=true]{background:var(--blue)}#sw[aria-checked=true]::after{transform:translateX(30px)}
+.stage{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:1rem;min-height:230px}
+.atk{width:84px;height:84px;border-radius:50%;display:grid;place-items:center;background:#3A1620;color:#FF8A9A;font:700 .8rem var(--d);border:1px solid #B93A4A}
+.lane{position:relative;height:150px;min-width:70px}.pk{position:absolute;left:0;top:50%;width:10px;height:10px;margin-top:-5px;border-radius:50%;background:#FF5468;box-shadow:0 0 12px #FF5468}
+.shield{position:absolute;left:62%;top:50%;width:12px;height:170px;margin-top:-85px;border-radius:99px;background:linear-gradient(var(--sky),var(--blue));opacity:0;box-shadow:0 0 30px var(--blue);transition:opacity .4s}.demo.hard .shield{opacity:1}
+.chip{position:absolute;right:0;top:50%;margin-top:-10px;font:600 .72rem ui-monospace,Menlo,monospace;background:#3A1620;color:#FF8A9A;border:1px solid #B93A4A;border-radius:6px;padding:.15rem .5rem;white-space:nowrap}
+.site{width:min(250px,42vw);background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:border-color .3s,box-shadow .3s}.site.hit{border-color:#FF5468;box-shadow:0 0 30px rgba(255,84,104,.5)}.demo.hard .site{border-color:var(--sky)}
+.sh{padding:.6rem 1rem;background:linear-gradient(90deg,var(--blue),var(--sky));color:#fff;font:700 .9rem var(--d)}.dr{display:flex;justify-content:space-between;gap:.5rem;padding:.7rem 1rem;border-top:1px solid var(--line);font-size:.9rem}.dr em{font-style:normal;font-weight:600;color:#FF7A8A}.demo.hard .dr em{color:#6FE3A8}
+.meters{display:grid;gap:.9rem;margin-top:2rem}.mt{display:grid;grid-template-columns:84px 1fr;align-items:center;gap:1rem}.mt span{height:8px;background:var(--line);border-radius:8px;overflow:hidden}.mt i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--sky));transition:width .9s cubic-bezier(.2,.8,.2,1)}.demo:not(.hard) .mt:nth-child(3) i{background:#FF5468}
+.dfoot{display:flex;gap:2rem;flex-wrap:wrap;margin-top:2rem;justify-content:space-between}#log{min-height:8.5rem;font:.85rem/1.8 ui-monospace,Menlo,Consolas,monospace;flex:1;min-width:240px}.ok{color:#6FE3A8}.bad{color:#FF7A8A}.cn{display:flex;gap:1.5rem;font:700 1.1rem var(--d)}
+
+.scan{position:absolute;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--sky),transparent);box-shadow:0 0 24px 6px var(--sky);animation:scan 3.2s ease-in-out infinite alternate}@keyframes scan{from{top:4%}to{top:96%}}
+.ph .tag{position:absolute;left:1.2rem;bottom:1.2rem;font:600 .85rem ui-monospace,Menlo,monospace;color:#fff;background:rgba(6,18,43,.65);padding:.35rem .7rem;border-radius:6px}
+.tm{margin-top:2rem;background:#040D22;border:1px solid var(--line);border-radius:14px;overflow:hidden;color:#CFE0FF;font:.9rem/1.7 ui-monospace,Menlo,Consolas,monospace;box-shadow:0 20px 60px rgba(45,107,255,.18)}
+.tbar{display:flex;align-items:center;gap:6px;padding:.7rem 1rem;background:#0A1B3F}.tbar i{width:10px;height:10px;border-radius:50%;background:#2D4A8C}.tbar span{margin-left:.6rem;color:#7F95C2;font-size:.8rem}
+.tout{height:220px;overflow:auto;padding:1rem 1.2rem 0}.tout .cm{color:#fff}.tout .ou{color:#9DB4E0;white-space:pre-wrap}.tout .em a{color:#6FB6FF;text-decoration:underline}
+.tin{display:flex;gap:.6rem;padding:.4rem 1.2rem .8rem;align-items:center}.tin span{color:#6FE3A8}.tin input{flex:1;min-width:0;background:transparent;border:0;color:#fff;font:inherit;padding:.3rem 0;outline:0;caret-color:#6FB6FF}.tin:focus-within{box-shadow:inset 0 0 0 1px #2D6BFF}
+.tc{display:flex;gap:.5rem;flex-wrap:wrap;padding:0 1.2rem 1.2rem}.tc button{font:inherit;color:#6FB6FF;background:transparent;border:1px solid #1E3A7A;border-radius:6px;padding:.2rem .7rem;cursor:pointer;transition:background .2s}.tc button:hover{background:#0F2A66}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.hl{color:var(--sky);background:linear-gradient(var(--blue),var(--blue)) 0 96%/0% .12em no-repeat;transition:background-size 1.1s .5s cubic-bezier(.2,.8,.2,1)}.hl.on{background-size:100% .12em}
+.abt{position:relative;overflow:hidden;background:linear-gradient(110deg,#6FB6FF,#B5DAFF);color:#06122B;animation:pulse 2.4s infinite}.abt:hover{background:linear-gradient(110deg,#fff,#CFE6FF);color:#06122B}
+.abt::before{content:"";position:absolute;top:0;bottom:0;width:40%;left:-60%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.75),transparent);transform:skewX(-20deg);animation:shine 3.2s infinite}
+.wv{display:inline-block;transform-origin:70% 70%;animation:wave 2.2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(111,182,255,.6)}70%,100%{box-shadow:0 0 0 18px rgba(111,182,255,0)}}
+@keyframes shine{0%,55%{left:-60%}100%{left:130%}}
+@keyframes wave{0%,60%,100%{transform:rotate(0)}10%{transform:rotate(16deg)}20%{transform:rotate(-8deg)}30%{transform:rotate(16deg)}40%{transform:rotate(-4deg)}50%{transform:rotate(10deg)}}
+.calm .abt,.calm .abt::before,.calm .wv{animation:none}
+.faq .svc h3{font-size:clamp(1.3rem,2.4vw,1.9rem)}.faq .svc:last-child{border-bottom:1px solid var(--line)}.hero .wrap{position:relative;z-index:2}.term{z-index:2}#rm[hidden]{display:none}
+#bar{position:fixed;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--sky));transform:scaleX(0);transform-origin:0 50%;z-index:70}
+.cv{position:fixed;inset:0;background:var(--blue);z-index:90;visibility:hidden;pointer-events:none;display:grid;place-items:center;color:var(--ink);font:800 clamp(3rem,12vw,9rem) var(--d);letter-spacing:-.05em}
+.dot{position:fixed;left:0;top:0;width:14px;height:14px;margin:-7px;border-radius:50%;background:var(--sky);mix-blend-mode:difference;pointer-events:none;z-index:99;opacity:0}
+@media(pointer:coarse){.dot{display:none}}
+</style>
+</head>
+<body>
+
+<div class="dot" id="dot"></div><div id="bar"></div><div class="cv" id="cv"><span id="cvt"></span></div>
+<button class="btn" id="rm" hidden style="position:fixed;left:1rem;bottom:calc(1rem + env(safe-area-inset-bottom,0px));z-index:80">Your device has Reduce Motion on. Tap to enable animations</button>
+<nav><a class="logo" href="#home" aria-label="Viraj Talekar, home">VT<b>.</b></a>
+<ul><li><a data-v="home" href="#home">Home</a></li><li><a data-v="services" href="#services">Services</a></li><li><a data-v="about" href="#about">About</a></li><li><a class="btn mag" data-v="contact" href="#contact" style="padding:.55rem 1.1rem">Contact</a></li></ul></nav>
+
+<div id="app">
+<!-- HOME -->
+<main class="view" data-view="home" data-title="Home">
+<section class="hero"><div class="orb o1" data-px="-8"></div><div class="orb o2" data-px="10"></div>
+<div class="wrap"><h1 data-split>Interfaces that feel fast. <span class="l2">Code that’s hard to break.</span></h1>
+<p class="sub" data-fade>I’m Viraj Prasad Talekar, a front-end developer and cybersecurity enthusiast. I build motion-rich websites for businesses that want to look sharp and stay safe.</p>
+<div class="row" data-fade><a class="btn abt mag" href="#about"><span class="wv" aria-hidden="true">👋</span>About me</a><a class="btn mag" href="#services">See what I do</a><a class="btn o mag" href="#contact">Start a project</a></div></div>
+<div class="term" aria-hidden="true"><div class="hd"><i></i><i></i><i></i></div><div class="dim">$ audit client-site.com</div><div class="ok">pass  Content-Security-Policy set</div><div class="ok">pass  HTTPS and HSTS enforced</div><div class="ok">pass  Inputs validated and escaped</div><div class="ok">pass  Dependencies up to date</div><div class="dim">Score 100/100, ready to ship</div></div></section>
+<div class="mq" aria-hidden="true"><div><span>JavaScript</span><span>TypeScript</span><span>React</span><span>GSAP</span><span>Lenis</span><span>Accessibility</span><span>Web security</span><span>Performance</span><span>JavaScript</span><span>TypeScript</span><span>React</span><span>GSAP</span><span>Lenis</span><span>Accessibility</span><span>Web security</span><span>Performance</span></div></div>
+<section class="hs"><div class="in"><div class="wrap"><h2 data-split>How a project runs</h2><p class="lead">Four stages, each with a clear deliverable, so you always know what happens next.</p></div>
+<div class="tr"><article><div><em>1</em><h3>Recon</h3><p>We agree goals, audience and risks. I review your current site, content and any security gaps before a line is written.</p></div></article><article><div><em>2</em><h3>Design</h3><p>Layouts, type and motion are prototyped in the browser so you approve how it feels, not just how it looks.</p></div></article><article><div><em>3</em><h3>Build</h3><p>Clean, accessible front-end code with animations tuned to run smoothly on mid-range phones.</p></div></article><article><div><em>4</em><h3>Harden</h3><p>Security headers, dependency checks, form validation and a final performance pass before launch.</p></div></article></div><div class="wrap"><div class="hp"><i></i></div></div></div></section>
+<section><div class="wrap"><h2 data-split style="max-width:16ch">Design, speed and security are one job.</h2><p class="lead" data-fade>Flip the switch, then launch an attack and watch what happens to the site.</p>
+<div class="demo" data-fade><div class="dtop"><div class="sw-w"><button id="sw" type="button" role="switch" aria-checked="false" aria-label="Toggle hardened build"></button><span id="mode">Careless build</span></div><button class="btn" id="fire" type="button">Launch attack</button></div>
+<div class="stage"><div class="atk">Attacker</div><div class="lane"><div class="shield"></div></div><div class="site"><div class="sh">Your website</div><div class="dr"><span>Customers</span><em>Exposed</em></div><div class="dr"><span>Passwords</span><em>Exposed</em></div><div class="dr"><span>Payments</span><em>Exposed</em></div></div></div>
+<div class="meters"><div class="mt"><b>Design</b><span><i></i></span></div><div class="mt"><b>Speed</b><span><i></i></span></div><div class="mt"><b>Security</b><span><i></i></span></div></div>
+<div class="dfoot"><div id="log" aria-live="polite"></div><div class="cn"><span>Blocked <span id="nb" class="ok">0</span></span><span>Leaked <span id="nl" class="bad">0</span></span></div></div></div></div></section>
+<section><div class="wrap"><h2 data-split>What you get</h2><div class="pc">
+<article data-fade><h3>Fast</h3><p>Pages that load quickly and animate smoothly, even on mid-range phones.</p></article>
+<article data-fade><h3>Secure</h3><p>Security headers, validated forms and clean dependencies from day one.</p></article>
+<article data-fade><h3>Clear</h3><p>Plain-language updates, fixed milestones and no surprises along the way.</p></article></div></div></section>
+<div class="mq2" aria-hidden="true"><div><span>Fast</span><span>Secure</span><span>Animated</span><span>Fast</span><span>Secure</span><span>Animated</span><span>Fast</span><span>Secure</span><span>Animated</span><span>Fast</span><span>Secure</span><span>Animated</span></div></div>
+<section><div class="wrap two"><div><h2 data-split>My pre-launch checklist</h2><p class="lead" data-fade>Tap each item to see what a site needs before I call it ready.</p></div>
+<div data-fade><div class="rgw"><div class="ring"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="52" class="rb"/><circle id="rg" cx="60" cy="60" r="52" class="rf"/></svg><b id="rn">0/6</b></div><p id="rs" style="margin:0;color:var(--mut)">Tap items to check them off</p></div>
+<ul class="cl"><li><button type="button" aria-pressed="false">Content Security Policy set</button></li><li><button type="button" aria-pressed="false">HTTPS and HSTS enforced</button></li><li><button type="button" aria-pressed="false">Forms validated and escaped</button></li><li><button type="button" aria-pressed="false">Dependencies audited</button></li><li><button type="button" aria-pressed="false">Accessibility checked</button></li><li><button type="button" aria-pressed="false">Performance tested</button></li></ul></div></div></section>
+<section style="padding-top:0"><div class="wrap"><h2 data-split>Questions you might have</h2><div class="faq" style="margin-top:3rem"><div class="svc" data-fade role="button" tabindex="0" aria-expanded="false"><h3>How long does a website take?</h3><div class="sc"><div><p class="lead" style="margin:0">It depends on the number of pages and how much animation you want. After our first call I send a clear estimate with fixed milestones.</p></div></div></div><div class="svc" data-fade role="button" tabindex="0" aria-expanded="false"><h3>How much does it cost?</h3><div class="sc"><div><p class="lead" style="margin:0">I quote per project once I understand what you need, so you pay for the work and nothing extra.</p></div></div></div><div class="svc" data-fade role="button" tabindex="0" aria-expanded="false"><h3>Can you improve my existing website?</h3><div class="sc"><div><p class="lead" style="margin:0">Yes. I can audit what you have, fix the biggest problems first and keep the parts that already work.</p></div></div></div><div class="svc" data-fade role="button" tabindex="0" aria-expanded="false"><h3>Will it work on phones?</h3><div class="sc"><div><p class="lead" style="margin:0">Yes. Every page is built for phones first and tested on smaller screens before it goes live.</p></div></div></div></div></div></section>
+</main>
+
+<!-- SERVICES -->
+<main class="view" data-view="services" data-title="Services" hidden>
+<section style="padding-top:10rem"><div class="wrap"><h1 style="font-size:clamp(3rem,10vw,9rem)" data-split>Services</h1><p class="lead" data-fade>Pick one service or combine them. Every project ends with code you own and documentation you can hand to another developer.</p>
+<div style="margin-top:4rem">
+<div class="svc open" data-fade role="button" tabindex="0" aria-expanded="true"><h3>Front-end development</h3><div class="sc"><div><p class="lead" style="margin:0">Responsive websites and web apps in HTML, CSS, JavaScript, TypeScript and React.</p><ul><li>Component-based builds from your design or mine</li><li>Accessible markup and keyboard support</li><li>Handover with clear documentation</li></ul></div></div></div>
+<div class="svc" data-fade role="button" tabindex="0" aria-expanded="false"><h3>Motion and interaction</h3><div class="sc"><div><p class="lead" style="margin:0">Scroll-driven storytelling with GSAP and Lenis that supports the message instead of distracting from it.</p><ul><li>Page transitions, pinned sections and parallax</li><li>Reduced-motion fallbacks for every animation</li><li>Tested on real mid-range phones</li></ul></div></div></div>
+<div class="svc" data-fade role="button" tabindex="0" aria-expanded="false"><h3>Security-first builds</h3><div class="sc"><div><p class="lead" style="margin:0">Protection built into the code, not added at the end.</p><ul><li>Content Security Policy and security headers</li><li>Input validation, output escaping and safe forms</li><li>Dependency review and a written findings report</li></ul></div></div></div>
+<div class="svc" data-fade style="border-bottom:1px solid var(--line)" role="button" tabindex="0" aria-expanded="false"><h3>Audits and fixes</h3><div class="sc"><div><p class="lead" style="margin:0">Already have a site? I review it and fix what matters most first.</p><ul><li>Performance, accessibility and SEO checks</li><li>Front-end security review with prioritised fixes</li><li>Re-test after changes are made</li></ul></div></div></div></div></div></section>
+</main>
+
+<!-- ABOUT -->
+<main class="view" data-view="about" data-title="About" hidden>
+<section style="padding-top:10rem"><div class="wrap"><h1 style="font-size:clamp(3rem,10vw,9rem)" data-split>About</h1>
+<div class="two" style="margin-top:4rem"><div class="ph"><div data-p="14">VT</div><span class="scan"></span><span class="tag">scanning for vulnerabilities…</span></div>
+<div><p class="big" data-split style="font-size:clamp(1.6rem,3.2vw,2.7rem)">Front-end developer by trade. <span class="hl">Security researcher</span> by habit.</p>
+<div class="tm" id="tm" data-fade><div class="tbar"><i></i><i></i><i></i><span>viraj@portfolio ~</span></div><div class="tout" id="tout" aria-live="polite"></div>
+<form id="tf" class="tin" autocomplete="off"><label for="ti" class="sr">Type a command</label><span>$</span><input id="ti" placeholder="type a command, or tap one below" spellcheck="false" maxlength="30"></form>
+<div class="tc"><button type="button" data-c="whoami">whoami</button><button type="button" data-c="skills">skills</button><button type="button" data-c="approach">approach</button><button type="button" data-c="security">security</button><button type="button" data-c="contact">contact</button><button type="button" data-c="help">help</button></div></div></div></div></div></section>
+<section style="padding-top:0"><div class="wrap two">
+<div class="panel" data-fade><h3>What I build with</h3><div class="sk"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>TypeScript</span><span>React</span><span>Next.js</span><span>GSAP</span><span>Lenis</span><span>Git</span></div></div>
+<div class="panel" data-fade><h3>How I think about security</h3><div class="sk"><span>OWASP Top 10</span><span>XSS prevention</span><span>CSP</span><span>Secure headers</span><span>Safe auth flows</span><span>Dependency hygiene</span></div></div></div></section>
+</main>
+
+<!-- CONTACT -->
+<main class="view" data-view="contact" data-title="Contact" hidden>
+<section style="padding-top:10rem"><div class="wrap two"><div><h1 style="font-size:clamp(3rem,9vw,8rem)" data-split>Tell me about your project</h1><p class="lead" data-fade>Share a few details and I’ll reply with next steps, a rough timeline and a quote. Or email me directly:</p><div data-fade><a id="mail" class="bm" href="#"></a><button class="btn o" id="cp" type="button" style="margin-top:1.2rem">Copy email</button></div></div>
+<form id="f" data-fade><label>Your name<input name="n" required autocomplete="name"></label><label>Email address<input name="e" type="email" required autocomplete="email"></label>
+<label>What do you need?<select name="s"><option>New website</option><option>Motion and animation</option><option>Security review</option><option>Audit and fixes</option></select></label>
+<label>Project details<textarea name="m" rows="5" required></textarea></label><button class="btn" type="submit" style="justify-self:start">Send message</button></form></div></section>
+</main>
+
+<section style="padding-top:0"><div class="wrap"><div class="cta"><h2 data-split>Let’s build something sharp.</h2><a class="btn mag" href="#contact">Start a project</a></div>
+<footer><span>© 2026 Viraj Prasad Talekar</span><span>Front-end development and web security</span></footer></div></section>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+const EMAIL="virajptalekar1612@gmail.com";
+let ok=false;try{ok=sessionStorage.getItem('mo')==='1'}catch(e){}const sys=matchMedia('(prefers-reduced-motion: reduce)').matches;const R=sys&&!ok;if(R)document.documentElement.classList.add('calm');
+const $=(s,c=document)=>[...c.querySelectorAll(s)];const $1=(s,c=document)=>c.querySelector(s);
+gsap.registerPlugin(ScrollTrigger);ScrollTrigger.config({ignoreMobileResize:true});
+const lenis=R?null:new Lenis({lerp:.09});
+if(lenis){lenis.on('scroll',ScrollTrigger.update);gsap.ticker.add(t=>lenis.raf(t*1000));gsap.ticker.lagSmoothing(0)}
+function split(el){[...el.childNodes].forEach(n=>{if(n.nodeType===3){const f=document.createDocumentFragment();n.textContent.split(/(\s+)/).forEach(t=>{if(!t.trim())f.append(t);else{const w=document.createElement('span');w.className='w';w.innerHTML='<span class="i">'+t+'</span>';f.append(w)}});n.replaceWith(f)}else split(n)})}
+$('[data-split],[data-scrub]').forEach(split);$('.hero h1 .i').forEach(i=>i.innerHTML=[...i.textContent].map(c=>'<span class="c">'+c+'</span>').join(''));
+$1('#mail').textContent=EMAIL;$1('#mail').href='mailto:'+EMAIL;
+const views=$('.view'),app=$1('#app'),M={x:-999,y:-999};let ctx,mm,delay=.25,busy=false,cur='';
+function init(next){
+  const q=s=>$(s,next).concat($(s,app).filter(e=>!e.closest('.view')));
+  if(R){gsap.set($('[data-scrub] .i'),{opacity:1});$('.hl').forEach(h=>h.classList.add('on'));return}
+  q('[data-split]').filter(el=>!el.matches('.hero h1')).forEach(el=>gsap.from($('.i',el),{yPercent:115,duration:1.1,ease:'power4.out',stagger:.05,delay:el.closest('.hero')?delay:0,scrollTrigger:{trigger:el,start:'top 90%'}}));
+  const f=q('[data-fade]');gsap.set(f,{opacity:0});ScrollTrigger.batch(f,{start:'top 92%',onEnter:b=>gsap.to(b,{y:0,opacity:1,stagger:.12,duration:.9,ease:'power3.out',overwrite:true})});f.forEach(e=>gsap.set(e,{y:36}));
+  q('[data-scrub]').forEach(el=>gsap.to($('.i',el),{opacity:1,stagger:.1,ease:'none',scrollTrigger:{trigger:el,start:'top 82%',end:'bottom 48%',scrub:true}}));
+  q('[data-p]').forEach(el=>gsap.to(el,{yPercent:+el.dataset.p,ease:'none',scrollTrigger:{trigger:el.parentElement,start:'top bottom',end:'bottom top',scrub:true}}));
+  q('[data-px]').forEach(el=>gsap.to(el,{y:+el.dataset.px*14,ease:'none',scrollTrigger:{trigger:next,start:'top top',end:'bottom top',scrub:true}}));
+  q('.term div').forEach((l,i)=>gsap.from(l,{opacity:0,x:-14,duration:.4,delay:delay+1.1+i*.28}));
+  q('.stk').forEach((c,i,a)=>{if(i<a.length-1)gsap.to(c,{scale:.93,opacity:.45,ease:'none',scrollTrigger:{trigger:a[i+1],start:'top 85%',end:'top 12%',scrub:true}})});
+  q('.rows a').forEach(a=>gsap.from(a,{opacity:0,y:30,duration:.8,ease:'power3.out',scrollTrigger:{trigger:a,start:'top 92%'}}));
+  const m=q('.mq div')[0];if(m)gsap.to(m,{xPercent:-50,duration:30,ease:'none',repeat:-1});
+  const h=q('.hs')[0];
+  if(h){const t=$1('.tr',h),w=()=>t.scrollWidth-innerWidth;gsap.set(t,{willChange:'transform'});gsap.timeline({defaults:{ease:'none'},scrollTrigger:{trigger:h,pin:true,scrub:true,start:'top top',end:()=>'+='+Math.round(w()*1.5),invalidateOnRefresh:true}}).to(t,{x:()=>-w()},0).to($1('.hp i',h),{scaleX:1},0)}
+}
+if(sys&&!ok){const b=$1('#rm');b.hidden=false;b.onclick=()=>{try{sessionStorage.setItem('mo','1')}catch(e){}location.reload()}}
+if(lenis){lenis.on('scroll',e=>{gsap.to('.mq',{skewX:Math.max(-8,Math.min(8,-e.velocity*.5)),duration:.4,overwrite:true});gsap.to('nav',{yPercent:e.direction===1&&e.scroll>300?-120:0,duration:.4,overwrite:true})})}
+function net(hero){$('canvas',hero).forEach(x=>x.remove());const c=document.createElement('canvas');c.style.cssText='position:absolute;inset:0;width:100%;height:100%;pointer-events:none';hero.prepend(c);const g=c.getContext('2d'),col=getComputedStyle(document.documentElement).getPropertyValue('--sky').trim()||'#6FB6FF',m=M;let W,H,P;
+  const rs=()=>{W=c.width=hero.clientWidth;H=c.height=hero.clientHeight;P=Array.from({length:Math.min(80,W/18|0)},()=>({x:Math.random()*W,y:Math.random()*H,vx:Math.random()*.6-.3,vy:Math.random()*.6-.3}))};rs();addEventListener('resize',rs);
+  
+  const tick=()=>{if(!c.isConnected){gsap.ticker.remove(tick);removeEventListener('resize',rs);return}if(scrollY>H)return;g.clearRect(0,0,W,H);g.fillStyle=g.strokeStyle=col;
+    P.forEach((p,i)=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;g.globalAlpha=.7;g.beginPath();g.arc(p.x,p.y,1.8,0,6.3);g.fill();
+      for(let j=i+1;j<P.length;j++){const o=P[j],l=Math.hypot(p.x-o.x,p.y-o.y);if(l<130){g.globalAlpha=(1-l/130)*.35;g.beginPath();g.moveTo(p.x,p.y);g.lineTo(o.x,o.y);g.stroke()}}
+      const l=Math.hypot(p.x-m.x,p.y-m.y);if(l<180){g.globalAlpha=(1-l/180)*.7;g.beginPath();g.moveTo(p.x,p.y);g.lineTo(m.x,m.y);g.stroke()}})};
+  gsap.ticker.add(tick)}
+function extra(next){
+  if(R)return;const q=s=>$(s,next).concat($(s,app).filter(e=>!e.closest('.view')));
+  gsap.to('#bar',{scaleX:1,ease:'none',scrollTrigger:{start:0,end:'max',scrub:.3}});
+  const hero=$1('.hero',next);
+  if(hero){gsap.from($('.c',hero),{yPercent:120,rotate:10,opacity:0,duration:1.1,ease:'power4.out',stagger:.022,delay});
+    gsap.to($1('h1',hero),{scale:.86,opacity:.1,y:-80,filter:'blur(8px)',ease:'none',scrollTrigger:{trigger:hero,start:'top top',end:'bottom top',scrub:true}});
+    hero.onpointermove=e=>{const r=hero.getBoundingClientRect();M.x=e.clientX-r.left;M.y=e.clientY-r.top;const x=e.clientX/innerWidth-.5,y=e.clientY/innerHeight-.5;gsap.to('.o1',{x:x*90,duration:1.2});gsap.to('.o2',{x:-x*120,duration:1.4});gsap.to('.term',{x:-x*18,y:-y*12,duration:1})};net(hero)}
+  q('.mk').forEach(m=>{gsap.from(m,{clipPath:'inset(0 0 100% 0)',duration:1.3,ease:'power4.out',scrollTrigger:{trigger:m,start:'top 88%'}});gsap.fromTo($1('.fr',m),{y:70},{y:-10,ease:'none',scrollTrigger:{trigger:m,start:'top bottom',end:'bottom top',scrub:true}})});
+  q('.ph').forEach(m=>gsap.from(m,{clipPath:'inset(100% 0 0 0)',duration:1.4,ease:'power4.out',scrollTrigger:{trigger:m,start:'top 88%'}}));
+  q('.svc h3').forEach(h=>gsap.from(h,{x:-70,opacity:0,duration:1,ease:'power4.out',scrollTrigger:{trigger:h,start:'top 90%'}}));
+  q('.sk').forEach(s=>gsap.from($('span',s),{y:24,opacity:0,scale:.8,stagger:.05,duration:.7,ease:'back.out(2)',scrollTrigger:{trigger:s,start:'top 90%'}}));
+  q('.hl').forEach(h=>ScrollTrigger.create({trigger:h,start:'top 88%',once:true,onEnter:()=>h.classList.add('on')}));
+  q('#tm').forEach(t=>ScrollTrigger.create({trigger:t,start:'top 80%',once:true,onEnter:()=>{$1('#tout').textContent='';run('whoami')}}));
+  q('.ph').forEach(m=>{m.onpointermove=e=>{const r=m.getBoundingClientRect();gsap.to(m,{rotateY:((e.clientX-r.left)/r.width-.5)*14,rotateX:-((e.clientY-r.top)/r.height-.5)*14,transformPerspective:900,duration:.5})};m.onpointerleave=()=>gsap.to(m,{rotateX:0,rotateY:0,duration:.8,ease:'power3.out'})});
+  q('.demo').forEach(d=>ScrollTrigger.create({trigger:d,start:'top 65%',once:true,onEnter:()=>{if(touched)return;setMode(false);setTimeout(()=>{if(!touched&&d.isConnected)fire()},600);setTimeout(()=>{if(!touched)setMode(true)},5000);setTimeout(()=>{if(!touched)fire()},5700)}}));
+  q('.cl').forEach(l=>{const b=$('button',l);let last=-1;const f=t=>{const n=Math.round(t.progress*b.length);if(n===last)return;last=n;b.forEach((x,i)=>x.setAttribute('aria-pressed',i<n));upd()};ScrollTrigger.create({trigger:l,start:'top 80%',end:'bottom 50%',onUpdate:f,onRefresh:f})});
+  q('.mq2 div').forEach(m=>gsap.fromTo(m,{xPercent:-50},{xPercent:0,duration:45,ease:'none',repeat:-1}));
+  q('.cta').forEach(c=>gsap.fromTo(c,{scale:.82,borderRadius:'140px'},{scale:1,borderRadius:'36px',ease:'none',scrollTrigger:{trigger:c,start:'top 100%',end:'top 35%',scrub:true}}));
+}
+function show(name,first){
+  let next=views.find(v=>v.dataset.view===name);if(!next){next=views[0];name='home'}if(busy||(!first&&name===cur))return;cur=name;
+  const swap=()=>{views.forEach(v=>v.hidden=v!==next);try{ctx&&ctx.revert()}catch(e){console.error(e)}try{mm&&mm.revert()}catch(e){}mm=null;ScrollTrigger.getAll().forEach(t=>{try{t.kill(true)}catch(e){}});
+    lenis?lenis.scrollTo(0,{immediate:true}):scrollTo(0,0);document.body.dataset.v=name;document.title=next.dataset.title+' | Viraj Prasad Talekar';
+    $('nav a[data-v]').forEach(a=>a.classList.toggle('on',a.dataset.v===name));
+    ctx=gsap.context(()=>{try{init(next)}catch(e){console.error(e)}try{extra(next)}catch(e){console.error(e)}},app);ScrollTrigger.refresh();gsap.fromTo(app,{opacity:0},{opacity:1,duration:R?0:.5})};
+  if(first||R){swap();return}
+  busy=true;setTimeout(()=>{busy=false},3500);$1('#cvt').textContent=next.dataset.title;gsap.set('#cv',{visibility:'visible'});
+  gsap.fromTo('#cv',{yPercent:100},{yPercent:0,duration:.6,ease:'power4.inOut',onComplete:()=>{try{swap()}catch(e){console.error(e)}gsap.to('#cv',{yPercent:-100,duration:.7,delay:.2,ease:'power4.inOut',onComplete:()=>{gsap.set('#cv',{visibility:'hidden'});busy=false;const n=location.hash.slice(1)||'home';if(n!==cur)show(n)}})}})
+}
+addEventListener('hashchange',()=>show(location.hash.slice(1)));
+function start(){show(location.hash.slice(1),true)}
+if(document.fonts)document.fonts.ready.then(()=>ScrollTrigger.refresh());addEventListener('load',()=>ScrollTrigger.refresh());
+if(matchMedia('(pointer:fine)').matches&&!R){const d=$1('#dot'),x=gsap.quickTo(d,'x',{duration:.25}),y=gsap.quickTo(d,'y',{duration:.25});
+  addEventListener('pointermove',e=>{gsap.to(d,{opacity:1,duration:.3});x(e.clientX);y(e.clientY)});
+  document.addEventListener('pointerover',e=>gsap.to(d,{scale:e.target.closest('a,button,input,textarea,select')?3:1,duration:.3}));
+  $('.mag').forEach(b=>{b.addEventListener('pointermove',e=>{const r=b.getBoundingClientRect();gsap.to(b,{x:(e.clientX-r.left-r.width/2)*.3,y:(e.clientY-r.top-r.height/2)*.4,duration:.3})});b.addEventListener('pointerleave',()=>gsap.to(b,{x:0,y:0,duration:.6,ease:'elastic.out(1,.4)'}))})}
+let hard=false,atkBusy=false,nb=0,nl=0,touched=false;
+const ATK=['SQL injection','XSS payload','Brute-force login','Outdated library exploit','Clickjacking','CSRF forgery'],LOOT=['passwords.db','customers.csv','payments.log'];
+function setMode(h){hard=h;$1('#sw').setAttribute('aria-checked',h);$1('#mode').textContent=h?'Hardened build':'Careless build';const v=h?[95,92,97]:[90,35,8];$('.mt i').forEach((b,i)=>b.style.width=v[i]+'%');$1('.demo').classList.toggle('hard',h);$('.dr em').forEach(e=>e.textContent=h?'Protected':'Exposed')}
+function dlog(t,ok){const l=$1('#log'),d=document.createElement('div');d.className=ok?'ok':'bad';d.textContent=(ok?'Blocked: ':'Leaked: ')+t;l.prepend(d);while(l.children.length>5)l.lastChild.remove();$1('#nb').textContent=nb;$1('#nl').textContent=nl}
+function fire(){if(atkBusy)return;atkBusy=true;const lane=$1('.lane'),W=lane.clientWidth,site=$1('.site');
+  ATK.forEach((name,i)=>{const p=document.createElement('i');p.className='pk';lane.append(p);
+    gsap.fromTo(p,{x:0,y:(i-2.5)*20},{x:hard?W*.62:W-8,duration:.9,delay:i*.35,ease:'power1.in',onComplete:()=>{
+      if(hard){gsap.to(p,{scale:4,opacity:0,duration:.35,onComplete:()=>p.remove()});gsap.fromTo('.shield',{scaleX:1},{scaleX:2.2,yoyo:true,repeat:1,duration:.12});nb++;dlog(name,true)}
+      else{p.remove();site.classList.add('hit');setTimeout(()=>site.classList.remove('hit'),350);nl++;dlog(name,false);const c=document.createElement('span');c.className='chip';c.textContent=LOOT[i%3];lane.append(c);gsap.fromTo(c,{x:0,opacity:1},{x:-(W-60),opacity:0,duration:1.1,ease:'power1.in',onComplete:()=>c.remove()})}
+      if(i===ATK.length-1)setTimeout(()=>{atkBusy=false},500)}})})}
+setMode(false);
+const CMD={help:['commands: whoami, skills, approach, security, contact, clear'],whoami:['Viraj Prasad Talekar','role      front-end developer','focus     animated, fast, secure websites','interest  cybersecurity'],skills:['html  css  javascript  typescript','react  next.js  gsap  lenis  git'],approach:['1 recon    goals, audience, risks','2 design   prototype in the browser','3 build    clean, accessible code','4 harden   headers, validation, audit'],security:['owasp top 10   xss prevention   csp','secure headers   safe auth flows   dependency hygiene'],contact:[EMAIL]};
+let tk=0;const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+async function typeLine(o,text,cls,speed,my){const d=document.createElement('div');d.className=cls;o.append(d);if(R){d.textContent=text}else{for(const ch of text){if(my!==tk){d.remove();return}d.textContent+=ch;o.scrollTop=o.scrollHeight;await sleep(speed)}}
+  if(cls==='ou em'){d.textContent='';const a=document.createElement('a');a.href='mailto:'+EMAIL;a.textContent=EMAIL;d.append(a)}o.scrollTop=o.scrollHeight}
+async function run(raw){const c=String(raw).trim().toLowerCase().slice(0,30);if(!c)return;const o=$1('#tout');if(c==='clear'){tk++;o.textContent='';return}
+  const my=++tk;await typeLine(o,'$ '+c,'cm',24,my);const out=CMD[c]||['command not found: '+c,'type help to see commands'];
+  for(const l of out){if(my!==tk)return;await typeLine(o,l,c==='contact'?'ou em':'ou',10,my)}}
+function upd(){const n=$('.cl button[aria-pressed=true]').length,N=$('.cl button').length;$1('#rg').style.strokeDashoffset=327*(1-n/N);$1('#rn').textContent=n+'/'+N;$1('#rs').textContent=n===N?'Ready to ship':'Tap items to check them off'}
+function tog(s){const o=s.classList.toggle('open');s.setAttribute('aria-expanded',o);setTimeout(()=>ScrollTrigger.refresh(),600)}
+document.addEventListener('click',e=>{
+    const tc=e.target.closest('.tc button');if(tc){run(tc.dataset.c);return}
+  if(e.target.closest('#sw')){touched=true;setMode(!hard);return}
+  if(e.target.closest('#fire')){touched=true;fire();return}
+  const ck=e.target.closest('.cl button');if(ck){ck.setAttribute('aria-pressed',ck.getAttribute('aria-pressed')!=='true');upd();return}
+  const cp=e.target.closest('#cp');
+  if(cp){const done=()=>{cp.textContent='Copied';setTimeout(()=>cp.textContent='Copy email',1800)};const fb=()=>{const t=document.createElement('textarea');t.value=EMAIL;document.body.append(t);t.select();try{document.execCommand('copy');done()}catch(x){cp.textContent='Select and copy the email above'}t.remove()};navigator.clipboard?navigator.clipboard.writeText(EMAIL).then(done,fb):fb();return}
+  const s=e.target.closest('.svc');if(s)tog(s)});
+document.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.classList&&e.target.classList.contains('svc')){e.preventDefault();tog(e.target)}});
+$1('#tf').addEventListener('submit',e=>{e.preventDefault();const i=$1('#ti');run(i.value);i.value=''});
+$1('#f').addEventListener('submit',e=>{e.preventDefault();const d=new FormData(e.target);
+  location.href='mailto:'+EMAIL+'?subject='+encodeURIComponent(d.get('s')+' enquiry from '+d.get('n'))+'&body='+encodeURIComponent(d.get('m')+'\n\nReply to: '+d.get('e'))});
+start();
+</script>
+</body>
+</html>
